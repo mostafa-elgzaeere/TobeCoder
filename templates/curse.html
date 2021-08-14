@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}}/{{track}}{% endblock title %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+
+
+
+
+
+
+
+
+<!--start what do you want-->
+<div class="w-100"></div>
+<div class="before_categories text-center mt-5 text-light"> 
+  <h2>{{current_video}}  in  One Lesson </h2>
+</div>
+<!-- end what do you want-->
+
+
+
+<!--start curses -->
+<div class="container mt-5 d-flex" style="flex-wrap: wrap; justify-content: center;">
+
+   <div class="video ">
+    <div class="embed-responsive embed-responsive-item embed-responsive-16by9">
+   
+        <iframe width="560" height="215" src="{{current_video.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      </div>
+   </div>
+
+</div>
+<!--end curses-->
+
+
+
+<!--start what do you need-->
+<h2 class="text-light requeirments mt-5">Requeirments ..... </h2>
+
+<div class="requeirments container ">
+    <div class="need_to jumbotron rounded mt-2">
+        <i class="fa fa-2x fa-exclamation-circle text-dark"></i>
+        <h3 class="bg-light pl-2">What Do you need to start in This Course ?</h3>
+        <ul>
+            <li class="text-danger ml-1"> <i><i class="fa fa-check-circle"></i></i><p class="text-muted" style="font-size: 18px;">{{current_video.requierments}}</p></li>
+        </ul>
+    </div>
+    
+    <div class="will_learn jumbotron rounded mt-2">
+            <i class="fa fa-2x fa-exclamation-circle text-dark"></i>
+            <h3 class="bg-light pl-2">What Will you Learn in This Course ? </h3>
+            <ul>
+                            <li class="text-danger ml-1"> <i><i class="fa fa-check-circle"></i></i><p class="text-muted" style="font-size: 18px;">{{current_video.will_learn}} </p></li>
+
+            </ul>
+        </div>
+        
+
+
+</div>
+
+<!--end what do you need-->
+
+
+
+
+{% include "includes/footer.html" %}
+
+
+{% endblock content %}
+

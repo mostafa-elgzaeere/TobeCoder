@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}}/{{track}}{% endblock title %}
+
+{% block content %}
+
+{% include "includes/header.html" %}
+
+
+
+
+
+
+<!--start what do you want-->
+<div class="w-100"></div>
+<div class="before_categories text-center mt-5 text-light"> 
+  <h2>Curses Avilable in {{track}} Track </h2>
+</div>
+<!-- end what do you want-->
+
+<!--start curses -->
+<div class="container mt-5 d-flex curses" style="flex-wrap: wrap; justify-content: center;">
+
+
+{% for i in curses  %}
+
+    <div class="card ml-5 mr-5 mt-2" style="width: 18rem;">
+        <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <a href="{% url 'show_current_video' track.id i.id %}" class="btn btn-primary">Enroll This Curse</a>
+        </div>
+      </div>
+
+{% endfor %}
+
+
+</div>
+
+<!--end curses-->
+
+
+
+
+{% include "includes/footer.html" %}
+
+
+{% endblock content %}
+

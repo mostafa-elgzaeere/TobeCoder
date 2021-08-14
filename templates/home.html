@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}{{block.super}}/Home{% endblock title %}{{block.super}}/Home
+
+{% block content %}
+
+{% include "includes/header.html" %}
+
+
+{% include "includes/about.html" %}
+
+
+<!--start what do you want-->
+<div class="w-100"></div>
+<div class="before_categories text-center mt-5 text-light"> 
+  <h2>What is The Track You Want To Study ?</h2>
+</div>
+<!-- end what do you want-->
+
+
+
+<!--start tracks-->
+<div class="container">
+    <div class="row">
+    {% for i in tracks %}
+    
+      <a href="{% url 'show_curses' i.id %}" class="col-8 col-5 col-lg-4 mr-2 mt-3">
+        <img width="100%" height="100%" src="{{i.image.url}}">
+      </a>  
+
+    {% endfor %}
+  
+    </div> 
+</div>
+<!--end tracks-->
+
+
+
+
+
+{% include "includes/slider.html" %}
+
+
+
+<!--start students count-->
+<div class="container">
+  <h2 class="text-light">Students Count ..... </h2>
+  <div class="students_count">
+
+  <div class="men">
+    <div class="men_logo" ><i class="fa fa-2x fa-male p-2 text-light"></i></div>
+    <h4 class="p-2">Men</h4>
+    <div class="men_count p-2" id="men_count">101</div>
+  </div>
+
+  <div class="kids">
+    <div class="kids_logo"><i class="fa fa-2x fa-child p-2 text-light"></i></div>
+    <h4>kids_count</h4>
+    <div class="kids_count pt-4" id="kids_count">136</div>
+  </div>
+
+
+  <div class="womans">
+    <div class="womans"><i class="fa fa-2x fa-child p-2 text-light"></i></div>
+    <h4 class="p-2">Woamns</h4>
+    <div class="womans_count p-2" id="womans_count" >98</div>
+  </div>
+
+</div>
+ 
+
+</div>
+<!--end students count-->
+
+{% include "includes/footer.html" %}
+
+
+{% endblock content %}
+
